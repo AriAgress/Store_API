@@ -1,2 +1,4 @@
 .App {
+  width: min(100% - 2rem, 960px);
+  margin-inline: auto;
 }
