@@ -25,15 +25,22 @@ const Category = styled.li`
   margin: 0rem 1rem;
 `;
 
+const Cart = styled.div`
+  border: 1px solid blue;
+  height: 1rem;
+  width: 1rem;
+`;
+
 const Nav = () => {
   return (
     <NavBar>
-      <Logo>YO</Logo>
+      <Logo></Logo>
       <NavItems>
         <Category>Men</Category>
         <Category>Woman</Category>
         <Category>Jewelery</Category>
         <Category>Electronics</Category>
+        <Cart></Cart>
       </NavItems>
     </NavBar>
   );
