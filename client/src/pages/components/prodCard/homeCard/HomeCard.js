@@ -3,6 +3,7 @@ import React from "react";
 import {
   CardWrapper,
   Card,
+  CardHeader,
   IMG,
   CardInfo,
   TextTile,
@@ -11,21 +12,29 @@ import {
   CardButton,
 } from "../Product";
 
-const HomeCard = () => {
+const HomeCard = ({ items }) => {
   return (
-    <CardWrapper>
-      <Card>
-        <IMG />
-        <CardInfo>
-          <TextTile>Product title </TextTile>
-          <TextBody>Product description and details</TextBody>
-        </CardInfo>
-        <CardFooter>
-          <TextTile>$499.49</TextTile>
-          <CardButton></CardButton>
-        </CardFooter>
-      </Card>
-    </CardWrapper>
+    <div>
+      <CardWrapper>
+        {items.map((p, i) => (
+          <Card key={i}>
+            <CardHeader>
+              <IMG src={p.image} />
+              <CardInfo>
+                <TextTile>{p.title} </TextTile>
+                <TextBody>{p.description}</TextBody>
+              </CardInfo>
+            </CardHeader>
+            <div>
+              <CardFooter>
+                <TextTile>${p.price}</TextTile>
+                <CardButton></CardButton>
+              </CardFooter>
+            </div>
+          </Card>
+        ))}
+      </CardWrapper>
+    </div>
   );
 };
 

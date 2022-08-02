@@ -4,24 +4,33 @@ export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
-  grid-gap: 1rem;
-  padding-top: 50px;
+  grid-gap: 2rem;
+  padding: 50px 0px;
 `;
 
 export const Card = styled.div`
-  height: 350px;
+  width: 200px;
   padding: 0.8em;
   background: #f5f5f5;
   position: relative;
   overflow: visible;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 `;
 
-export const IMG = styled.div`
-  background-color: #ffcaa6;
-  height: 40%;
+export const CardHeader = styled.div`
+  display: flex;
+  flex-flow: column;
+`;
+
+export const IMG = styled.img`
+  height: 200px;
   width: 100%;
   border-radius: 0.5rem;
+  border: none;
   transition: 0.3s ease;
 
   &:hover {
@@ -36,14 +45,23 @@ export const CardInfo = styled.div`
 `;
 
 export const TextTile = styled.p`
-  font-weight: 900;
-  font-size: 1.2em;
+  font-weight: 800;
+  font-size: 1em;
   line-height: 1.5;
 `;
 
 export const TextBody = styled.p`
   font-size: 0.9em;
   padding-bottom: 10px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;
+  max-height: 37px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 `;
 
 export const CardFooter = styled.div`
