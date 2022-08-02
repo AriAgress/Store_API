@@ -1,12 +1,12 @@
 import React from "react";
 import Nav from "./components/nav/Nav";
-import Product from "./components/prodCard/Product";
+import HomeCard from "./components/prodCard/homeCard/HomeCard";
 
 const Home = () => {
   return (
     <div>
       <Nav />
-      <Product />
+      <HomeCard />
     </div>
   );
 };
