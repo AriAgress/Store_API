@@ -1,8 +1,13 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 
 import Home from "./pages/Home";
+import MensCat from "./pages/MensCat";
+import WomensCat from "./pages/WomensCat";
+import JewelCat from "./pages/JewelCat";
+import EleCat from "./pages/EleCat";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -44,7 +49,13 @@ function App() {
 
   return (
     <div className="App">
-      <Home items={items} mCat={mCat} fCat={fCat} jCat={jCat} eCat={eCat} />
+      <Routes>
+        <Route path="/" element={<Home items={items} />} />
+        <Route path="mens" element={<MensCat mCat={mCat} />} />
+        <Route path="womens" element={<WomensCat fCat={fCat} />} />
+        <Route path="jewelery" element={<JewelCat jCat={jCat} />} />
+        <Route path="electronics" element={<EleCat eCat={eCat} />} />
+      </Routes>
     </div>
   );
 }
