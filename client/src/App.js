@@ -11,9 +11,12 @@ function App() {
     const fetchData = async () => {
       const data = await axios.get("http://localhost:8000/api");
       setItems(data.data);
+      // const categories = data.data.category;
+      // console.log(categories);
     };
     fetchData();
   }, []);
+  console.log(items);
 
   return (
     <div className="App">
