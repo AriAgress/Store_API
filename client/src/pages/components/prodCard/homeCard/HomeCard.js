@@ -1,4 +1,5 @@
 import React from "react";
+import { GiShoppingCart } from "react-icons/gi";
 
 import {
   CardWrapper,
@@ -28,7 +29,9 @@ const HomeCard = ({ items }) => {
             <div>
               <CardFooter>
                 <TextTile>${p.price}</TextTile>
-                <CardButton></CardButton>
+                <CardButton>
+                  <GiShoppingCart />
+                </CardButton>
               </CardFooter>
             </div>
           </Card>

@@ -78,6 +78,8 @@ export const CardButton = styled.div`
   height: 20px;
   border: 1px solid #252525;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.3em;
   cursor: pointer;
   border-radius: 50px;
