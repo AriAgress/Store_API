@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 
-const CardWrapper = styled.div`
+export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
@@ -9,7 +8,7 @@ const CardWrapper = styled.div`
   padding-top: 50px;
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   height: 350px;
   padding: 0.8em;
   background: #f5f5f5;
@@ -18,7 +17,7 @@ const Card = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 `;
 
-const IMG = styled.div`
+export const IMG = styled.div`
   background-color: #ffcaa6;
   height: 40%;
   width: 100%;
@@ -32,22 +31,22 @@ const IMG = styled.div`
   }
 `;
 
-const CardInfo = styled.div`
+export const CardInfo = styled.div`
   padding-top: 10%;
 `;
 
-const TextTile = styled.p`
+export const TextTile = styled.p`
   font-weight: 900;
   font-size: 1.2em;
   line-height: 1.5;
 `;
 
-const TextBody = styled.p`
+export const TextBody = styled.p`
   font-size: 0.9em;
   padding-bottom: 10px;
 `;
 
-const CardFooter = styled.div`
+export const CardFooter = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -56,7 +55,7 @@ const CardFooter = styled.div`
   border-top: 1px solid #ddd;
 `;
 
-const CardButton = styled.div`
+export const CardButton = styled.div`
   width: 20px;
   height: 20px;
   border: 1px solid #252525;
@@ -71,23 +70,3 @@ const CardButton = styled.div`
     background-color: #ffcaa6;
   }
 `;
-
-const Product = () => {
-  return (
-    <CardWrapper>
-      <Card>
-        <IMG />
-        <CardInfo>
-          <TextTile>Product title </TextTile>
-          <TextBody>Product description and details</TextBody>
-        </CardInfo>
-        <CardFooter>
-          <TextTile>$499.49</TextTile>
-          <CardButton></CardButton>
-        </CardFooter>
-      </Card>
-    </CardWrapper>
-  );
-};
-
-export default Product;
