@@ -1,18 +1,24 @@
 import React from "react";
-import Nav from "./components/nav/Nav";
 import HomeCard from "./components/prodCard/homeCard/HomeCard";
 
-const Home = ({ items, openModal, showModal, setShowModal }) => {
+import { CardWrapper } from "../pages/components/prodCard/ProductSylesheet";
+
+const Home = ({ items }) => {
   return (
-    <div>
-      <Nav />
-      <HomeCard
-        items={items}
-        openModal={openModal}
-        showModal={showModal}
-        setShowModal={setShowModal}
-      />
-    </div>
+    <>
+      <CardWrapper>
+        {items.map((p, i) => (
+          <HomeCard
+            items={items}
+            key={i}
+            src={p.image}
+            title={p.title}
+            description={p.description}
+            price={p.price}
+          />
+        ))}
+      </CardWrapper>
+    </>
   );
 };
 

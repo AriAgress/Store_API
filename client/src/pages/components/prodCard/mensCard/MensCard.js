@@ -15,7 +15,7 @@ import {
 
 const MensCard = ({ mCat }) => {
   return (
-    <div>
+    <React.Fragment>
       <CardWrapper>
         {mCat.map((p, i) => (
           <Card key={i}>
@@ -37,7 +37,7 @@ const MensCard = ({ mCat }) => {
           </Card>
         ))}
       </CardWrapper>
-    </div>
+    </React.Fragment>
   );
 };
 

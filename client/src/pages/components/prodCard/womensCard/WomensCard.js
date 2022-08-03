@@ -15,7 +15,7 @@ import {
 
 const WomensCard = ({ fCat }) => {
   return (
-    <div>
+    <React.Fragment>
       <CardWrapper>
         {fCat.map((p, i) => (
           <Card key={i}>
@@ -37,7 +37,7 @@ const WomensCard = ({ fCat }) => {
           </Card>
         ))}
       </CardWrapper>
-    </div>
+    </React.Fragment>
   );
 };
 
