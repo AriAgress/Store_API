@@ -13,11 +13,11 @@ import {
   CardButton,
 } from "../ProductSylesheet";
 
-const HomeCard = ({ items }) => {
+const WomensCard = ({ fCat }) => {
   return (
     <div>
       <CardWrapper>
-        {items.map((p, i) => (
+        {fCat.map((p, i) => (
           <Card key={i}>
             <CardHeader>
               <IMG src={p.image} />
@@ -41,4 +41,4 @@ const HomeCard = ({ items }) => {
   );
 };
 
-export default HomeCard;
+export default WomensCard;
