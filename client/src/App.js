@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
 
+import Nav from "./pages/components/nav/Nav";
 import Home from "./pages/Home";
 import MensCat from "./pages/MensCat";
 import WomensCat from "./pages/WomensCat";
@@ -15,7 +16,6 @@ function App() {
   const [fCat, setFCat] = useState([]);
   const [jCat, setJCat] = useState([]);
   const [eCat, setECat] = useState([]);
-  const [showModal, setShowModal] = useState(false);
 
   const fetchData = async () => {
     const data = await axios.get("http://localhost:8000/api");
@@ -48,68 +48,15 @@ function App() {
     fetchData();
   }, []);
 
-  const openModal = () => {
-    setShowModal((prev) => !prev);
-  };
-
   return (
     <div className="App">
+      <Nav />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Home
-              items={items}
-              openModal={openModal}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-          }
-        />
-        <Route
-          path="mens"
-          element={
-            <MensCat
-              mCat={mCat}
-              openModal={openModal}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-          }
-        />
-        <Route
-          path="womens"
-          element={
-            <WomensCat
-              fCat={fCat}
-              openModal={openModal}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-          }
-        />
-        <Route
-          path="jewelery"
-          element={
-            <JewelCat
-              jCat={jCat}
-              openModal={openModal}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-          }
-        />
-        <Route
-          path="electronics"
-          element={
-            <EleCat
-              eCat={eCat}
-              openModal={openModal}
-              showModal={showModal}
-              setShowModal={setShowModal}
-            />
-          }
-        />
+        <Route path="/" element={<Home items={items} />} />
+        <Route path="mens" element={<MensCat mCat={mCat} />} />
+        <Route path="womens" element={<WomensCat fCat={fCat} />} />
+        <Route path="jewelery" element={<JewelCat jCat={jCat} />} />
+        <Route path="electronics" element={<EleCat eCat={eCat} />} />
       </Routes>
     </div>
   );

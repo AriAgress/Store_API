@@ -15,7 +15,7 @@ import {
 
 const JeweleryCard = ({ jCat }) => {
   return (
-    <div>
+    <React.Fragment>
       <CardWrapper>
         {jCat.map((p, i) => (
           <Card key={i}>
@@ -37,7 +37,7 @@ const JeweleryCard = ({ jCat }) => {
           </Card>
         ))}
       </CardWrapper>
-    </div>
+    </React.Fragment>
   );
 };
 

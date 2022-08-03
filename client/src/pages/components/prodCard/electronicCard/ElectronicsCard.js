@@ -15,7 +15,7 @@ import {
 
 const ElectronicsCard = ({ eCat }) => {
   return (
-    <div>
+    <React.Fragment>
       <CardWrapper>
         {eCat.map((p, i) => (
           <Card key={i}>
@@ -37,7 +37,7 @@ const ElectronicsCard = ({ eCat }) => {
           </Card>
         ))}
       </CardWrapper>
-    </div>
+    </React.Fragment>
   );
 };
 
