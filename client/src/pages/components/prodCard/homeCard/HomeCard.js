@@ -6,11 +6,15 @@ import {
   ModalWrapper,
   ModalImg,
   ModalContent,
+  Title,
+  Description,
+  Price,
+  PriceContainer,
+  ATC,
   CloseModalButton,
-} from "../Modal.js";
+} from "../ModalStyles.js";
 
 import {
-  CardWrapper,
   Card,
   CardHeader,
   IMG,
@@ -72,20 +76,21 @@ const HomeCard = ({ src, title, description, price }) => {
       </Card>
       {showModal ? (
         <Background onClick={closeModal} ref={modalRef}>
-          <div>
-            <ModalWrapper showModal={showModal}>
-              <ModalImg src={src} />
-              <ModalContent>
-                <h1>{title}</h1>
-                <h3>{description}</h3>
-                <p>{price}</p>
-              </ModalContent>
-              <CloseModalButton
-                aria-label="Close modal"
-                onClick={() => setShowModal((prev) => !prev)}
-              />
-            </ModalWrapper>
-          </div>
+          <ModalWrapper showModal={showModal}>
+            <ModalImg src={src} />
+            <ModalContent>
+              <Title>{title}</Title>
+              <Description>{description}</Description>
+              <PriceContainer>
+                <Price>${price}</Price>
+                <ATC>cart</ATC>
+              </PriceContainer>
+            </ModalContent>
+            <CloseModalButton
+              aria-label="Close modal"
+              onClick={() => setShowModal((prev) => !prev)}
+            />
+          </ModalWrapper>
         </Background>
       ) : null}
     </React.Fragment>
