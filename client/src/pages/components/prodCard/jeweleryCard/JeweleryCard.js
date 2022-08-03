@@ -13,11 +13,11 @@ import {
   CardButton,
 } from "../ProductSylesheet";
 
-const HomeCard = ({ items }) => {
+const JeweleryCard = ({ jCat }) => {
   return (
     <div>
       <CardWrapper>
-        {items.map((p, i) => (
+        {jCat.map((p, i) => (
           <Card key={i}>
             <CardHeader>
               <IMG src={p.image} />
@@ -41,4 +41,4 @@ const HomeCard = ({ items }) => {
   );
 };
 
-export default HomeCard;
+export default JeweleryCard;
