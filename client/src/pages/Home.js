@@ -9,7 +9,6 @@ const Home = ({ items }) => {
       <CardWrapper>
         {items.map((p, i) => (
           <HomeCard
-            items={items}
             key={i}
             src={p.image}
             title={p.title}

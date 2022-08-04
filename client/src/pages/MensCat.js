@@ -8,7 +8,6 @@ const MensCat = ({ mCat }) => {
       <CardWrapper>
         {mCat.map((p, i) => (
           <MensCard
-            mCat={mCat}
             key={i}
             src={p.image}
             title={p.title}
