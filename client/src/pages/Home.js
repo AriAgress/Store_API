@@ -5,11 +5,10 @@ import { CardWrapper } from "../pages/components/prodCard/ProductSylesheet";
 
 const Home = ({ items }) => {
   return (
-    <>
+    <React.Fragment>
       <CardWrapper>
         {items.map((p, i) => (
           <HomeCard
-            items={items}
             key={i}
             src={p.image}
             title={p.title}
@@ -18,7 +17,7 @@ const Home = ({ items }) => {
           />
         ))}
       </CardWrapper>
-    </>
+    </React.Fragment>
   );
 };
 
