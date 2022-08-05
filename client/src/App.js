@@ -9,6 +9,7 @@ import MensCat from "./pages/MensCat";
 import WomensCat from "./pages/WomensCat";
 import JewelCat from "./pages/JewelCat";
 import EleCat from "./pages/EleCat";
+import Cart from "./pages/Cart";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -57,6 +58,7 @@ function App() {
         <Route path="womens" element={<WomensCat fCat={fCat} />} />
         <Route path="jewelery" element={<JewelCat jCat={jCat} />} />
         <Route path="electronics" element={<EleCat eCat={eCat} />} />
+        <Route path="cart" element={<Cart />} />
       </Routes>
     </div>
   );

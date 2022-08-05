@@ -1,5 +1,6 @@
 import React from "react";
 import MensCard from "./components/prodCard/mensCard/MensCard";
+
 import { CardWrapper } from "./components/prodCard/ProductSylesheet";
 
 const MensCat = ({ mCat }) => {

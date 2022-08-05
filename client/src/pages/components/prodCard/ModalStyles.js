@@ -36,7 +36,6 @@ export const ModalContent = styled.div`
   line-height: 1.8;
   color: #141414;
   padding: 20px 40px;
-  text-align: justify;
   border-top: 1px solid #ddd;
 `;
 
@@ -49,6 +48,7 @@ export const Title = styled.div`
 export const Description = styled.div`
   font-weight: 500;
   padding: 10px 0;
+  text-align: justify;
 `;
 
 export const PriceContainer = styled.div`

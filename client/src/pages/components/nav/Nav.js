@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { GiShoppingCart } from "react-icons/gi";
 
 const NavBar = styled.div`
   display: flex;
@@ -26,10 +27,8 @@ const Category = styled.li`
   margin: 0rem 1rem;
 `;
 
-const Cart = styled.div`
-  border: 1px solid blue;
-  height: 1rem;
-  width: 1rem;
+const CartLogo = styled.div`
+  font-size: 1.5rem;
 `;
 
 const Nav = () => {
@@ -51,7 +50,11 @@ const Nav = () => {
         <Link to="/electronics">
           <Category>Electronics</Category>
         </Link>
-        <Cart></Cart>
+        <Link to="/cart">
+          <CartLogo>
+            <GiShoppingCart />
+          </CartLogo>
+        </Link>
       </NavItems>
     </NavBar>
   );
