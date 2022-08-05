@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { getAllCart, removeFromCart } from "./components/crud/Crud";
 
-const Cart = ({ product }) => {
+const Cart = () => {
   const [cartItem, setCartItem] = useState([]);
+
+  const removeItem = (p) => {
+    const newCart = removeFromCart(p);
+    setCartItem(newCart);
+  };
 
   useEffect(() => {
     setCartItem(getAllCart());
@@ -15,9 +20,7 @@ const Cart = ({ product }) => {
           <div key={i}>
             <div>{p.description}</div>
             <div>{p.count}</div>
-            <button
-              style={{ padding: "30px" }}
-              onClick={() => removeFromCart(product)}>
+            <button style={{ padding: "30px" }} onClick={() => removeItem(p)}>
               Remove me
             </button>
           </div>
