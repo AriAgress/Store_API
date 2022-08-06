@@ -69,4 +69,46 @@ export const removeFromCart = (product) => {
   }
 };
 
-//Create an empty array and
+export const addCartCount = (product) => {
+  console.log("Chicken", product);
+  let cart = [];
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
+    }
+    //map through the new cart array
+    console.log("be-forloop", cart);
+    for (let i = 0; i < cart.length; i++) {
+      const object = cart[i];
+      if (object.id === product.id) {
+        object.count++;
+      }
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    return cart;
+  }
+};
+
+export const subCartCount = (product) => {
+  console.log("Chicken", product);
+  let cart = [];
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
+    }
+    //map through the new cart array
+    console.log("be-forloop", cart);
+    for (let i = 0; i < cart.length; i++) {
+      const object = cart[i];
+      if (object.id === product.id) {
+        if (object.count === 1) {
+          object.count = 1;
+        } else if (object.count > 1) {
+          object.count--;
+        }
+      }
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    return cart;
+  }
+};
