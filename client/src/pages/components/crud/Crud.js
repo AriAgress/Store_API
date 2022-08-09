@@ -113,7 +113,6 @@ export const updateCart = (product, count) => {
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }
-    //map through the new cart array
     for (let i = 0; i < cart.length; i++) {
       const object = cart[i];
       if (object.id === product.id) {
@@ -122,5 +121,20 @@ export const updateCart = (product, count) => {
     }
     localStorage.setItem("cart", JSON.stringify(cart));
     return cart;
+  }
+};
+
+export const cartTotalPrice = () => {
+  let cart = [];
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
+    }
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+      total += cart[i].price * cart[i].count;
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    return total;
   }
 };
