@@ -7,9 +7,23 @@ import {
   updateCart,
 } from "./components/crud/Crud";
 
+import {
+  CartWrapper,
+  Card,
+  CardHeader,
+  IMG,
+  ItemDescription,
+  RemoveButton,
+  ItemInput,
+  InputContainer,
+  InputButton,
+  NumberInput,
+  Input,
+  ItemTotal,
+} from "./components/CartStyleSheet";
+
 const Cart = () => {
   const [cartItem, setCartItem] = useState([]);
-  // const [newInput, setNewInput] = useState("");
 
   const removeItem = (p) => {
     const newCart = removeFromCart(p);
@@ -31,65 +45,53 @@ const Cart = () => {
     setCartItem(input);
   };
 
-  // const update = (p) => {
-  //   const input = updateCart(p);
-  //   setNewInput(input);
-  // };
-
-  // const inputClick = () => {
-  //   if (isNaN(newInput)) {
-  //     alert("Please enter a valid number");
-  //     return;
-  //   } else {
-  //     setNewInput(newInput);
-  //   }
-  //   if (
-  //     newInput === null ||
-  //     newInput === 0 ||
-  //     newInput === undefined ||
-  //     newInput === ""
-  //   ) {
-  //     setNewInput(1);
-  //   }
-  // };
-
   useEffect(() => {
     setCartItem(getAllCart());
   }, []);
 
   return (
-    <div>
-      <div>
+    <React.Fragment>
+      <CartWrapper>
         {cartItem.map((p, i) => (
-          <div key={i}>
-            <div>{p.description}</div>
-            <div>{p.count}</div>
-            <button style={{ padding: "30px" }} onClick={() => removeItem(p)}>
-              Remove me
-            </button>
-            <br />
-            <div style={{ padding: "30px" }}>
-              <button
-                style={{ fontSize: "30px", padding: "30px" }}
-                onClick={() => addCount(p)}>
-                +
-              </button>
-              <input
-                style={{ fontSize: "30px", width: "20px" }}
-                placeholder={p.count}
-                onChange={(e) => handleChange(e, p)}
-              />
-              <button>Update</button>
-              <button
-                style={{ fontSize: "30px", padding: "30px" }}
-                onClick={() => subCount(p)}>
-                -
-              </button>
-            </div>
-          </div>
+          <Card key={i}>
+            <CardHeader>
+              <div>
+                <IMG alt="" src={p.image} />
+              </div>
+              <ItemDescription>
+                <div>{p.title}</div>
+                <RemoveButton onClick={() => removeItem(p)}>
+                  Remove Item
+                </RemoveButton>
+              </ItemDescription>
+            </CardHeader>
+            <ItemInput>
+              <InputContainer>
+                <InputButton
+                  style={{ borderRight: "none" }}
+                  onClick={() => subCount(p)}>
+                  -
+                </InputButton>
+                <NumberInput>
+                  <Input
+                    placeholder={p.count}
+                    onChange={(e) => handleChange(e, p)}
+                  />
+                </NumberInput>
+                <InputButton
+                  style={{ borderLeft: "none" }}
+                  onClick={() => addCount(p)}>
+                  +
+                </InputButton>
+              </InputContainer>
+            </ItemInput>
+            <ItemInput>
+              <ItemTotal>Total Price</ItemTotal>
+            </ItemInput>
+          </Card>
         ))}
-      </div>
-    </div>
+      </CartWrapper>
+    </React.Fragment>
   );
 };
 
