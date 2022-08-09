@@ -50,14 +50,12 @@ export const getAllCart = () => {
 };
 
 export const removeFromCart = (product) => {
-  console.log("Chicken", product);
   let cart = [];
   if (typeof window !== "undefined") {
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }
     //map through the new cart array
-    console.log("be-forloop", cart);
     for (let i = 0; i < cart.length; i++) {
       const object = cart[i];
       if (object.id === product.id) {
@@ -70,14 +68,12 @@ export const removeFromCart = (product) => {
 };
 
 export const addCartCount = (product) => {
-  console.log("Chicken", product);
   let cart = [];
   if (typeof window !== "undefined") {
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }
     //map through the new cart array
-    console.log("be-forloop", cart);
     for (let i = 0; i < cart.length; i++) {
       const object = cart[i];
       if (object.id === product.id) {
@@ -90,14 +86,12 @@ export const addCartCount = (product) => {
 };
 
 export const subCartCount = (product) => {
-  console.log("Chicken", product);
   let cart = [];
   if (typeof window !== "undefined") {
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }
     //map through the new cart array
-    console.log("be-forloop", cart);
     for (let i = 0; i < cart.length; i++) {
       const object = cart[i];
       if (object.id === product.id) {
@@ -106,6 +100,24 @@ export const subCartCount = (product) => {
         } else if (object.count > 1) {
           object.count--;
         }
+      }
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+    return cart;
+  }
+};
+
+export const updateCart = (product, count) => {
+  let cart = [];
+  if (typeof window !== "undefined") {
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
+    }
+    //map through the new cart array
+    for (let i = 0; i < cart.length; i++) {
+      const object = cart[i];
+      if (object.id === product.id) {
+        object.count = count;
       }
     }
     localStorage.setItem("cart", JSON.stringify(cart));
