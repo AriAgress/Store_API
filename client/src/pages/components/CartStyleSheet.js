@@ -31,6 +31,7 @@ export const IMG = styled.img`
   width: 100%;
   border-radius: 0.5rem;
   border: none;
+  padding-left: 1rem;
 `;
 
 export const ItemDescription = styled.div`

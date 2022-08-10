@@ -84,7 +84,9 @@ const HomeCard = ({ src, title, description, price, product }) => {
               <Description>{description}</Description>
               <PriceContainer>
                 <Price>${price}</Price>
-                <ATC>cart</ATC>
+                <ATC onClick={() => addToCart(product)}>
+                  <GiShoppingCart />
+                </ATC>
               </PriceContainer>
             </ModalContent>
             <CloseModalButton
