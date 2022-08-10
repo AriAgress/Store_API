@@ -39,7 +39,18 @@ const CartLogo = styled.div`
   }
 `;
 
+const CartNum = styled.div``;
+
 const Nav = () => {
+  // const [numTag, setNumTag] = useState();
+
+  // useEffect(() => {
+  //   cartTotalCount();
+  //   setNumTag(cartTotalCount());
+  // }, []);
+
+  // console.log("yo", cartTotalCount());
+
   return (
     <NavBar>
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -60,7 +71,9 @@ const Nav = () => {
         </Link>
         <Link to="/cart" style={{ textDecoration: "none" }}>
           <CartLogo>
-            <GiShoppingCart />
+            <CartNum>
+              <GiShoppingCart />
+            </CartNum>
           </CartLogo>
         </Link>
       </NavItems>

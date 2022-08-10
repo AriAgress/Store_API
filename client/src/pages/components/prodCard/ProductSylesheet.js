@@ -92,3 +92,22 @@ export const CardButton = styled.div`
     background-color: #ffcaa6;
   }
 `;
+
+export const AlertWrapper = styled.div`
+  width: 100%;
+  height: 70%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+`;
+
+export const AlertText = styled.div`
+  color: red;
+  font-size: 100px;
+  font-weight: bold;
+  z-index: 10;
+`;
