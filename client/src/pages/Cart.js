@@ -80,7 +80,7 @@ const Cart = () => {
             <CardHeader>
               <ItemDescription>
                 <div>{p.title}</div>
-                <div>{p.price}</div>
+                <div>${p.price}</div>
                 <RemoveButton onClick={() => removeItem(p)}>
                   Remove Item
                 </RemoveButton>
