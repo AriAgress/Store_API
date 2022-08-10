@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { GiShoppingCart } from "react-icons/gi";
+import { addToCart } from "../../crud/Crud.js";
 
 import {
   Background,
@@ -25,7 +26,7 @@ import {
   CardButton,
 } from "../ProductSylesheet";
 
-const JeweleryCard = ({ src, title, description, price }) => {
+const JeweleryCard = ({ src, title, description, price, product }) => {
   const [showModal, setShowModal] = useState(false);
 
   const modalRef = useRef();
@@ -68,7 +69,7 @@ const JeweleryCard = ({ src, title, description, price }) => {
         <div>
           <CardFooter>
             <TextTile>${price}</TextTile>
-            <CardButton>
+            <CardButton onClick={() => addToCart(product)}>
               <GiShoppingCart />
             </CardButton>
           </CardFooter>
@@ -83,7 +84,9 @@ const JeweleryCard = ({ src, title, description, price }) => {
               <Description>{description}</Description>
               <PriceContainer>
                 <Price>${price}</Price>
-                <ATC>cart</ATC>
+                <ATC onClick={() => addToCart(product)}>
+                  <GiShoppingCart />
+                </ATC>
               </PriceContainer>
             </ModalContent>
             <CloseModalButton
