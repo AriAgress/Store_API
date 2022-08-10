@@ -6,6 +6,7 @@ import {
   subCartCount,
   updateCart,
   cartTotalPrice,
+  cartItemPrice,
 } from "./components/crud/Crud";
 
 import {
@@ -44,6 +45,14 @@ const Cart = () => {
   const handleChange = (e, product) => {
     const input = updateCart(product, e.target.value);
     setCartItem(input);
+  };
+
+  const itemTotal = (quantity, price) => {
+    return quantity * price;
+  };
+
+  const tax = (price, taxRate = 0.0725) => {
+    return price * taxRate;
   };
 
   useEffect(() => {
@@ -89,11 +98,15 @@ const Cart = () => {
               </InputContainer>
             </ItemInput>
             <ItemInput>
-              <ItemTotal>Total Price</ItemTotal>
+              <ItemTotal>
+                Total Price ${itemTotal(p.count, p.price).toFixed(2)}
+              </ItemTotal>
             </ItemInput>
           </Card>
         ))}
         <div>${cartTotalPrice().toFixed(2)}</div>
+        <div>Shipping: Free</div>
+        <div>Tax: ${tax(cartTotalPrice()).toFixed(2)}</div>
       </CartWrapper>
     </React.Fragment>
   );
