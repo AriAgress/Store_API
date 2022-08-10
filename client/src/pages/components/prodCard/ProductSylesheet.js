@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 export const CardWrapper = styled.div`
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   padding: 50px 0px;
 `;
 
 export const Card = styled.div`
   width: 200px;
-  padding: 0.8em;
+  padding: 0.8rem;
   background: #f5f5f5;
   position: relative;
   overflow: visible;
