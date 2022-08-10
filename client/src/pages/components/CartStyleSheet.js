@@ -17,7 +17,7 @@ export const Card = styled.div`
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 0.7fr 1.3fr 1fr 1fr;
 `;
 
 export const CardHeader = styled.div`
@@ -34,7 +34,7 @@ export const IMG = styled.img`
 `;
 
 export const ItemDescription = styled.div`
-  width: 50%;
+  width: 100%;
   padding: 1.5rem;
   display: flex;
   flex-flow: column;
@@ -43,7 +43,7 @@ export const ItemDescription = styled.div`
 `;
 
 export const RemoveButton = styled.button`
-  width: 50%;
+  width: 60%;
   padding: 0.5rem;
   border: none;
   border-radius: 25px;

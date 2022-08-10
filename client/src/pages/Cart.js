@@ -74,10 +74,10 @@ const Cart = () => {
       <CartWrapper>
         {cartItem.map((p, i) => (
           <Card key={i}>
+            <div>
+              <IMG alt="" src={p.image} />
+            </div>
             <CardHeader>
-              <div>
-                <IMG alt="" src={p.image} />
-              </div>
               <ItemDescription>
                 <div>{p.title}</div>
                 <div>{p.price}</div>
