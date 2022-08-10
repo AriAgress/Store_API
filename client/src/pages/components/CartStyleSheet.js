@@ -126,3 +126,22 @@ export const CheckoutContainer = styled.div`
 `;
 
 export const CheckoutValues = styled.div``;
+
+export const ButtonContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+`;
+
+export const CheckoutButton = styled.button`
+  width: 50%;
+  font-weight: 800;
+  font-size: 18px;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #ffcaa6;
+  }
+`;
