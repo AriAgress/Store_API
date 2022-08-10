@@ -25,6 +25,8 @@ import {
   ValueContainer,
   CheckoutContainer,
   CheckoutValues,
+  ButtonContainer,
+  CheckoutButton,
 } from "./components/CartStyleSheet";
 
 const Cart = () => {
@@ -150,6 +152,9 @@ const Cart = () => {
             </CheckoutValues>
           </CheckoutContainer>
         </TotalCheckout>
+        <ButtonContainer>
+          <CheckoutButton>Checkout</CheckoutButton>
+        </ButtonContainer>
       </CartWrapper>
     </React.Fragment>
   );
