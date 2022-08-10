@@ -70,10 +70,11 @@ export const ATC = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.3em;
+  padding: 0.2rem;
   cursor: pointer;
   border-radius: 50px;
   transition: 0.3s ease-in-out;
+  font-size: 24px;
 
   &:hover {
     border: 1px solid #ffcaa6;
