@@ -14,6 +14,7 @@ const WomensCat = ({ fCat }) => {
             title={p.title}
             description={p.description}
             price={p.price}
+            product={p}
           />
         ))}
       </CardWrapper>
