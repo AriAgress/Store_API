@@ -24,10 +24,13 @@ import {
   TextBody,
   CardFooter,
   CardButton,
+  AlertWrapper,
+  AlertText,
 } from "../ProductSylesheet";
 
 const HomeCard = ({ src, title, description, price, product }) => {
   const [showModal, setShowModal] = useState(false);
+  const [isAlertVisible, setIsAlertVisible] = useState(false);
 
   const modalRef = useRef();
 
@@ -56,9 +59,22 @@ const HomeCard = ({ src, title, description, price, product }) => {
     setShowModal((prev) => !prev);
   };
 
+  const handleButtonClick = () => {
+    setIsAlertVisible(true);
+  };
+
+  setTimeout(() => {
+    setIsAlertVisible(false);
+  }, 500);
+
   return (
     <React.Fragment>
       <Card>
+        {isAlertVisible && (
+          <AlertWrapper>
+            <AlertText>Added to cart!</AlertText>
+          </AlertWrapper>
+        )}
         <CardHeader>
           <IMG src={src} onClick={openModal} />
           <CardInfo>
@@ -69,7 +85,11 @@ const HomeCard = ({ src, title, description, price, product }) => {
         <div>
           <CardFooter>
             <TextTile>${price}</TextTile>
-            <CardButton onClick={() => addToCart(product)}>
+            <CardButton
+              onClick={() => {
+                addToCart(product);
+                handleButtonClick();
+              }}>
               <GiShoppingCart />
             </CardButton>
           </CardFooter>

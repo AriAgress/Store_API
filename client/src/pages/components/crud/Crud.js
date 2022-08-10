@@ -138,3 +138,18 @@ export const cartTotalPrice = () => {
     return total;
   }
 };
+
+// export const cartTotalCount = () => {
+//   let cart = [];
+//   if (typeof window !== "undefined") {
+//     if (localStorage.getItem("cart")) {
+//       cart = JSON.parse(localStorage.getItem("cart"));
+//     }
+//     let total = 0;
+//     for (let i = 0; i < cart.length; i++) {
+//       total += cart[i].count;
+//     }
+//     localStorage.setItem("cart", JSON.stringify(cart));
+//     return total;
+//   }
+// };
