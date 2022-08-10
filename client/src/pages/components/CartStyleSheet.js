@@ -146,3 +146,26 @@ export const CheckoutButton = styled.button`
     background-color: #ffcaa6;
   }
 `;
+
+export const CartAlert = styled.h1`
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const HomeLink = styled.div`
+  padding-top: 2rem;
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: #ffcaa6;
+  }
+
+  &:visited {
+    color: black;
+    text-decoration: none;
+  }
+`;
