@@ -25,32 +25,40 @@ const NavItems = styled.ul`
 
 const Category = styled.li`
   margin: 0rem 1rem;
+  color: black;
+  &:hover {
+    color: #ffcaa6;
+  }
 `;
 
 const CartLogo = styled.div`
   font-size: 1.5rem;
+  color: black;
+  &:hover {
+    color: #ffcaa6;
+  }
 `;
 
 const Nav = () => {
   return (
     <NavBar>
-      <Link to="/">
+      <Link to="/" style={{ textDecoration: "none" }}>
         <Logo></Logo>
       </Link>
       <NavItems>
-        <Link to="/mens">
+        <Link to="/mens" style={{ textDecoration: "none" }}>
           <Category>Men</Category>
         </Link>
-        <Link to="/womens">
+        <Link to="/womens" style={{ textDecoration: "none" }}>
           <Category>Woman</Category>
         </Link>
-        <Link to="/jewelery">
+        <Link to="/jewelery" style={{ textDecoration: "none" }}>
           <Category>Jewelery</Category>
         </Link>
-        <Link to="/electronics">
+        <Link to="/electronics" style={{ textDecoration: "none" }}>
           <Category>Electronics</Category>
         </Link>
-        <Link to="/cart">
+        <Link to="/cart" style={{ textDecoration: "none" }}>
           <CartLogo>
             <GiShoppingCart />
           </CartLogo>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import EmptyCart from "./components/crud/EmptyCart";
 import {
   getAllCart,
   removeFromCart,
@@ -71,91 +72,97 @@ const Cart = () => {
 
   return (
     <React.Fragment>
-      <CartWrapper>
-        {cartItem.map((p, i) => (
-          <Card key={i}>
-            <div>
-              <IMG alt="" src={p.image} />
-            </div>
-            <CardHeader>
-              <ItemDescription>
-                <div>{p.title}</div>
-                <div>${p.price}</div>
-                <RemoveButton onClick={() => removeItem(p)}>
-                  Remove Item
-                </RemoveButton>
-              </ItemDescription>
-            </CardHeader>
-            <ItemInput>
-              <InputContainer>
-                <InputButton
-                  style={{ borderRight: "none" }}
-                  onClick={() => subCount(p)}>
-                  -
-                </InputButton>
-                <NumberInput>
-                  <Input
-                    placeholder={p.count}
-                    onChange={(e) => handleChange(e, p)}
-                  />
-                </NumberInput>
-                <InputButton
-                  style={{ borderLeft: "none" }}
-                  onClick={() => addCount(p)}>
-                  +
-                </InputButton>
-              </InputContainer>
-            </ItemInput>
-            <ItemInput>
-              <ItemTotal>${itemTotal(p.count, p.price).toFixed(2)}</ItemTotal>
-            </ItemInput>
-          </Card>
-        ))}
-        <TotalCheckout>
-          <div />
-          <ValueContainer>
-            <CheckoutValues>Subtotal:</CheckoutValues>
-            <CheckoutValues>Shipping:</CheckoutValues>
-            <CheckoutValues
-              style={{
-                borderBottom: "1px solid black",
-                paddingBottom: "1rem",
-              }}>
-              Tax:
-            </CheckoutValues>
-            <CheckoutValues
-              style={{
-                paddingTop: "1rem",
-              }}>
-              Total:
-            </CheckoutValues>
-          </ValueContainer>
-          <CheckoutContainer>
-            <CheckoutValues>${cartTotalPrice().toFixed(2)}</CheckoutValues>
-            <CheckoutValues>Free</CheckoutValues>
-            <CheckoutValues
-              style={{
-                borderBottom: "1px solid black",
-                width: "100%",
-                textAlign: "right",
-                paddingBottom: "1rem",
-              }}>
-              ${tax(cartTotalPrice()).toFixed(2)}
-            </CheckoutValues>
-            <CheckoutValues
-              style={{
-                fontSize: "24px",
-                fontWeight: "600",
-                paddingTop: "1rem",
-              }}>
-              ${totalSum(cartTotalPrice(), tax(cartTotalPrice())).toFixed(2)}
-            </CheckoutValues>
-          </CheckoutContainer>
-        </TotalCheckout>
-        <ButtonContainer>
-          <CheckoutButton>Checkout</CheckoutButton>
-        </ButtonContainer>
-      </CartWrapper>
+      {cartItem.length > 0 ? (
+        <CartWrapper>
+          {cartItem.map((p, i) => (
+            <Card key={i}>
+              <div>
+                <IMG alt="" src={p.image} />
+              </div>
+              <CardHeader>
+                <ItemDescription>
+                  <div>{p.title}</div>
+                  <div>${p.price}</div>
+                  <RemoveButton onClick={() => removeItem(p)}>
+                    Remove Item
+                  </RemoveButton>
+                </ItemDescription>
+              </CardHeader>
+              <ItemInput>
+                <InputContainer>
+                  <InputButton
+                    style={{ borderRight: "none" }}
+                    onClick={() => subCount(p)}>
+                    -
+                  </InputButton>
+                  <NumberInput>
+                    <Input
+                      placeholder={p.count}
+                      onChange={(e) => handleChange(e, p)}
+                    />
+                  </NumberInput>
+                  <InputButton
+                    style={{ borderLeft: "none" }}
+                    onClick={() => addCount(p)}>
+                    +
+                  </InputButton>
+                </InputContainer>
+              </ItemInput>
+              <ItemInput>
+                <ItemTotal>${itemTotal(p.count, p.price).toFixed(2)}</ItemTotal>
+              </ItemInput>
+            </Card>
+          ))}
+          <TotalCheckout>
+            <div />
+            <ValueContainer>
+              <CheckoutValues>Subtotal:</CheckoutValues>
+              <CheckoutValues>Shipping:</CheckoutValues>
+              <CheckoutValues
+                style={{
+                  borderBottom: "1px solid black",
+                  paddingBottom: "1rem",
+                }}>
+                Tax:
+              </CheckoutValues>
+              <CheckoutValues
+                style={{
+                  paddingTop: "1rem",
+                }}>
+                Total:
+              </CheckoutValues>
+            </ValueContainer>
+            <CheckoutContainer>
+              <CheckoutValues>${cartTotalPrice().toFixed(2)}</CheckoutValues>
+              <CheckoutValues>Free</CheckoutValues>
+              <CheckoutValues
+                style={{
+                  borderBottom: "1px solid black",
+                  width: "100%",
+                  textAlign: "right",
+                  paddingBottom: "1rem",
+                }}>
+                ${tax(cartTotalPrice()).toFixed(2)}
+              </CheckoutValues>
+              <CheckoutValues
+                style={{
+                  fontSize: "24px",
+                  fontWeight: "600",
+                  paddingTop: "1rem",
+                }}>
+                ${totalSum(cartTotalPrice(), tax(cartTotalPrice())).toFixed(2)}
+              </CheckoutValues>
+            </CheckoutContainer>
+          </TotalCheckout>
+          <ButtonContainer>
+            <CheckoutButton>Checkout</CheckoutButton>
+          </ButtonContainer>
+        </CartWrapper>
+      ) : (
+        <CartWrapper>
+          <EmptyCart />
+        </CartWrapper>
+      )}
     </React.Fragment>
   );
 };
