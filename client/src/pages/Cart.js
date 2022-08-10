@@ -6,7 +6,6 @@ import {
   subCartCount,
   updateCart,
   cartTotalPrice,
-  cartItemPrice,
 } from "./components/crud/Crud";
 
 import {
@@ -22,6 +21,10 @@ import {
   NumberInput,
   Input,
   ItemTotal,
+  TotalCheckout,
+  ValueContainer,
+  CheckoutContainer,
+  CheckoutValues,
 } from "./components/CartStyleSheet";
 
 const Cart = () => {
@@ -53,6 +56,10 @@ const Cart = () => {
 
   const tax = (price, taxRate = 0.0725) => {
     return price * taxRate;
+  };
+
+  const totalSum = (a, b) => {
+    return a + b;
   };
 
   useEffect(() => {
@@ -98,15 +105,51 @@ const Cart = () => {
               </InputContainer>
             </ItemInput>
             <ItemInput>
-              <ItemTotal>
-                Total Price ${itemTotal(p.count, p.price).toFixed(2)}
-              </ItemTotal>
+              <ItemTotal>${itemTotal(p.count, p.price).toFixed(2)}</ItemTotal>
             </ItemInput>
           </Card>
         ))}
-        <div>${cartTotalPrice().toFixed(2)}</div>
-        <div>Shipping: Free</div>
-        <div>Tax: ${tax(cartTotalPrice()).toFixed(2)}</div>
+        <TotalCheckout>
+          <div />
+          <ValueContainer>
+            <CheckoutValues>Subtotal:</CheckoutValues>
+            <CheckoutValues>Shipping:</CheckoutValues>
+            <CheckoutValues
+              style={{
+                borderBottom: "1px solid black",
+                paddingBottom: "1rem",
+              }}>
+              Tax:
+            </CheckoutValues>
+            <CheckoutValues
+              style={{
+                paddingTop: "1rem",
+              }}>
+              Total:
+            </CheckoutValues>
+          </ValueContainer>
+          <CheckoutContainer>
+            <CheckoutValues>${cartTotalPrice().toFixed(2)}</CheckoutValues>
+            <CheckoutValues>Free</CheckoutValues>
+            <CheckoutValues
+              style={{
+                borderBottom: "1px solid black",
+                width: "100%",
+                textAlign: "right",
+                paddingBottom: "1rem",
+              }}>
+              ${tax(cartTotalPrice()).toFixed(2)}
+            </CheckoutValues>
+            <CheckoutValues
+              style={{
+                fontSize: "24px",
+                fontWeight: "600",
+                paddingTop: "1rem",
+              }}>
+              ${totalSum(cartTotalPrice(), tax(cartTotalPrice())).toFixed(2)}
+            </CheckoutValues>
+          </CheckoutContainer>
+        </TotalCheckout>
       </CartWrapper>
     </React.Fragment>
   );

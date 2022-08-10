@@ -10,7 +10,7 @@ export const CartWrapper = styled.div`
 
 export const Card = styled.div`
   width: 100%;
-  padding: 0.8em;
+  padding: 0.8rem 0;
   background: #f5f5f5;
   position: relative;
   overflow: visible;
@@ -23,6 +23,7 @@ export const Card = styled.div`
 export const CardHeader = styled.div`
   display: flex;
   flex-flow: row;
+  padding-left: 1rem;
 `;
 
 export const IMG = styled.img`
@@ -42,7 +43,7 @@ export const ItemDescription = styled.div`
 `;
 
 export const RemoveButton = styled.button`
-  width: 40%;
+  width: 50%;
   padding: 0.5rem;
   border: none;
   border-radius: 25px;
@@ -55,18 +56,19 @@ export const RemoveButton = styled.button`
 `;
 
 export const ItemInput = styled.div`
+  width: 100%;
+  padding-top: 1.5rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 `;
 
 export const InputContainer = styled.div`
+  height: 20%;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
 `;
 
 export const InputButton = styled.button`
-  position: relative;
   height: 100%;
   background-color: white;
   font-size: 24px;
@@ -101,4 +103,26 @@ export const Input = styled.input`
   }
 `;
 
-export const ItemTotal = styled.div``;
+export const ItemTotal = styled.div`
+  font-weight: 700;
+  padding-right: 1.5rem;
+`;
+
+export const TotalCheckout = styled.div`
+  width: 100%;
+  padding: 0.8rem 0;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  line-height: 2rem;
+`;
+
+export const ValueContainer = styled.div``;
+
+export const CheckoutContainer = styled.div`
+  display: flex;
+  flex-flow: column;
+  align-items: flex-end;
+  padding-right: 1.5rem;
+`;
+
+export const CheckoutValues = styled.div``;
