@@ -14,6 +14,7 @@ const EleCat = ({ eCat }) => {
             title={p.title}
             description={p.description}
             price={p.price}
+            product={p}
           />
         ))}
       </CardWrapper>
