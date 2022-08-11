@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { GiShoppingCart } from "react-icons/gi";
+import { AiOutlineCheck } from "react-icons/ai";
 import { addToCart } from "../../crud/Crud.js";
 
 import {
@@ -65,16 +66,11 @@ const HomeCard = ({ src, title, description, price, product }) => {
 
   setTimeout(() => {
     setIsAlertVisible(false);
-  }, 500);
+  }, 1000);
 
   return (
     <React.Fragment>
       <Card>
-        {isAlertVisible && (
-          <AlertWrapper>
-            <AlertText>Added to cart!</AlertText>
-          </AlertWrapper>
-        )}
         <CardHeader>
           <IMG src={src} onClick={openModal} />
           <CardInfo>
@@ -86,11 +82,12 @@ const HomeCard = ({ src, title, description, price, product }) => {
           <CardFooter>
             <TextTile>${price}</TextTile>
             <CardButton
+              isAlertVisible={isAlertVisible}
               onClick={() => {
                 addToCart(product);
                 handleButtonClick();
               }}>
-              <GiShoppingCart />
+              {(isAlertVisible && <AiOutlineCheck />) || <GiShoppingCart />}
             </CardButton>
           </CardFooter>
         </div>
@@ -104,8 +101,13 @@ const HomeCard = ({ src, title, description, price, product }) => {
               <Description>{description}</Description>
               <PriceContainer>
                 <Price>${price}</Price>
-                <ATC onClick={() => addToCart(product)}>
-                  <GiShoppingCart />
+                <ATC
+                  isAlertVisible={isAlertVisible}
+                  onClick={() => {
+                    addToCart(product);
+                    handleButtonClick();
+                  }}>
+                  {(isAlertVisible && <AiOutlineCheck />) || <GiShoppingCart />}
                 </ATC>
               </PriceContainer>
             </ModalContent>

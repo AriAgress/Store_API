@@ -64,8 +64,8 @@ export const Price = styled.div`
 `;
 
 export const ATC = styled.div`
-  height: 40px;
-  width: 40px;
+  width: ${(props) => (props.isAlertVisible === true ? "55px" : "40px")};
+  height: ${(props) => (props.isAlertVisible === true ? "55px" : "40px")};
   border: 1px solid #252525;
   display: flex;
   justify-content: center;
@@ -77,8 +77,13 @@ export const ATC = styled.div`
   font-size: 24px;
 
   &:hover {
-    border: 1px solid #ffcaa6;
-    background-color: #ffcaa6;
+    /* border: 1px solid #ffcaa6; */
+    border: ${(props) =>
+      props.isAlertVisible === true
+        ? "1px solid limegreen"
+        : "1px solid #ffcaa6"};
+    background-color: ${(props) =>
+      props.isAlertVisible === true ? "limegreen" : "#ffcaa6"};
   }
 `;
 
