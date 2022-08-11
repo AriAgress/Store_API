@@ -25,8 +25,6 @@ import {
   TextBody,
   CardFooter,
   CardButton,
-  AlertWrapper,
-  AlertText,
 } from "../ProductSylesheet";
 
 const HomeCard = ({ src, title, description, price, product }) => {
