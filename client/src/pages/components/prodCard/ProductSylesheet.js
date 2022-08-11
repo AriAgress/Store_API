@@ -76,8 +76,9 @@ export const CardFooter = styled.div`
 `;
 
 export const CardButton = styled.div`
-  width: 20px;
-  height: 20px;
+  width: ${(props) => (props.isAlertVisible === true ? "35px" : "20px")};
+  height: ${(props) => (props.isAlertVisible === true ? "35px" : "20px")};
+
   border: 1px solid #252525;
   display: flex;
   justify-content: center;
@@ -88,26 +89,11 @@ export const CardButton = styled.div`
   transition: 0.3s ease-in-out;
 
   &:hover {
-    border: 1px solid #ffcaa6;
-    background-color: #ffcaa6;
+    border: ${(props) =>
+      props.isAlertVisible === true
+        ? "1px solid limegreen"
+        : "1px solid #ffcaa6"};
+    background-color: ${(props) =>
+      props.isAlertVisible === true ? "limegreen" : "#ffcaa6"};
   }
-`;
-
-export const AlertWrapper = styled.div`
-  width: 100%;
-  height: 70%;
-  top: 0;
-  left: 0;
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-`;
-
-export const AlertText = styled.div`
-  color: red;
-  font-size: 100px;
-  font-weight: bold;
-  z-index: 10;
 `;
