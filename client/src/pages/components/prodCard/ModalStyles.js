@@ -77,7 +77,6 @@ export const ATC = styled.div`
   font-size: 24px;
 
   &:hover {
-    /* border: 1px solid #ffcaa6; */
     border: ${(props) =>
       props.isAlertVisible === true
         ? "1px solid limegreen"
