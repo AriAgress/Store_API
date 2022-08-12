@@ -4,6 +4,7 @@ import {
   SliderWrapper,
   SlideImage,
   DisplayWrapper,
+  DisplayBody,
   InfoBox,
   Intro,
 } from "./CarouselStyles.js";
@@ -43,16 +44,16 @@ const Carousel = ({ slides }) => {
       onMouseLeave={() => setPaused(false)}>
       {slides.map((slide, index) => {
         return (
-          <div key={index}>
+          <DisplayWrapper key={index} style={{ width: "100%" }}>
             {index === current && (
-              <DisplayWrapper>
+              <DisplayBody even={slide.id % 2 === 0 ? true : false}>
                 <InfoBox>
                   <Intro>{slide.description}</Intro>
                 </InfoBox>
                 <SlideImage src={slide.image} alt="" />
-              </DisplayWrapper>
+              </DisplayBody>
             )}
-          </div>
+          </DisplayWrapper>
         );
       })}
     </SliderWrapper>
