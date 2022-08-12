@@ -7,14 +7,27 @@ import { CardWrapper } from "../pages/components/prodCard/ProductSylesheet";
 const Home = ({ items }) => {
   const ImageData = [
     {
-      description: "Styles that stack up",
-      image: `${items[14].image}`,
+      id: 1,
+      description: [
+        <div>
+          Styles that. <br /> stack. <br /> up.
+        </div>,
+      ],
+      image: `${items[14]?.image}`,
     },
     {
-      image: `${items[12].image}`,
+      id: 2,
+      description: [<div>The latest tech.</div>],
+      image: `${items[13]?.image}`,
     },
     {
-      image: `${items[6].image}`,
+      id: 3,
+      description: [
+        <div style={{ textAlign: "center" }}>
+          We have it all. <br /> SHOP NOW!
+        </div>,
+      ],
+      image: `${items[4]?.image}`,
     },
   ];
 

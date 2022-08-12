@@ -2,17 +2,26 @@ import styled from "styled-components";
 
 export const SliderWrapper = styled.div`
   height: 400px;
+  width: 100%;
   position: relative;
-  display: flex;
-  justify-content: center;
   padding-top: 50px;
 `;
 
 export const DisplayWrapper = styled.div`
-  width: 80%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
   display: flex;
+  justify-content: center;
+`;
+
+export const DisplayBody = styled.div`
+  width: 100%;
+  display: flex;
+  flex-flow: ${(props) => (props.even ? "row-reverse" : "row")};
   justify-content: space-between;
   align-items: center;
+  padding: 0px 150px;
 
   background-color: ;
 `;
