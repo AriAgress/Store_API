@@ -1,6 +1,7 @@
 import React from "react";
 import HomeCard from "./components/prodCard/homeCard/HomeCard";
 import Carousel from "./components/carousel/Carousel";
+import FreeShip from "./components/freeShip/FreeShip";
 
 import { CardWrapper } from "../pages/components/prodCard/ProductSylesheet";
 
@@ -33,6 +34,7 @@ const Home = ({ items }) => {
 
   return (
     <React.Fragment>
+      <FreeShip />
       <Carousel slides={ImageData} />
       <CardWrapper>
         {items.map((p, i) => (

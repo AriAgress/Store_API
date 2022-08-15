@@ -1,20 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { FaStore } from "react-icons/fa";
 import { GiShoppingCart } from "react-icons/gi";
 
 const NavBar = styled.div`
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
   margin-top: 2rem;
 `;
 
 const Logo = styled.div`
-  border: 1px solid blue;
-  height: 5rem;
-  width: 5rem;
+  font-size: 5rem;
+  color: black;
 `;
 
 const NavItems = styled.ul`
@@ -54,7 +54,9 @@ const Nav = () => {
   return (
     <NavBar>
       <Link to="/" style={{ textDecoration: "none" }}>
-        <Logo></Logo>
+        <Logo>
+          <FaStore />
+        </Logo>
       </Link>
       <NavItems>
         <Link to="/mens" style={{ textDecoration: "none" }}>
