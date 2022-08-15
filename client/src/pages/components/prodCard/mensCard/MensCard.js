@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import { GiShoppingCart } from "react-icons/gi";
+import { AiOutlineCheck } from "react-icons/ai";
 import { addToCart } from "../../crud/Crud.js";
 
 import {
@@ -28,6 +29,7 @@ import {
 
 const MensCard = ({ src, title, description, price, product }) => {
   const [showModal, setShowModal] = useState(false);
+  const [isAlertVisible, setIsAlertVisible] = useState(false);
 
   const modalRef = useRef();
 
@@ -55,6 +57,14 @@ const MensCard = ({ src, title, description, price, product }) => {
   const openModal = () => {
     setShowModal((prev) => !prev);
   };
+
+  const handleButtonClick = () => {
+    setIsAlertVisible(true);
+  };
+
+  setTimeout(() => {
+    setIsAlertVisible(false);
+  }, 1000);
   return (
     <React.Fragment>
       <Card>
@@ -68,8 +78,13 @@ const MensCard = ({ src, title, description, price, product }) => {
         <div>
           <CardFooter>
             <TextTile>${price}</TextTile>
-            <CardButton onClick={() => addToCart(product)}>
-              <GiShoppingCart />
+            <CardButton
+              isAlertVisible={isAlertVisible}
+              onClick={() => {
+                addToCart(product);
+                handleButtonClick();
+              }}>
+              {(isAlertVisible && <AiOutlineCheck />) || <GiShoppingCart />}
             </CardButton>
           </CardFooter>
         </div>
@@ -83,8 +98,13 @@ const MensCard = ({ src, title, description, price, product }) => {
               <Description>{description}</Description>
               <PriceContainer>
                 <Price>${price}</Price>
-                <ATC onClick={() => addToCart(product)}>
-                  <GiShoppingCart />
+                <ATC
+                  isAlertVisible={isAlertVisible}
+                  onClick={() => {
+                    addToCart(product);
+                    handleButtonClick();
+                  }}>
+                  {(isAlertVisible && <AiOutlineCheck />) || <GiShoppingCart />}
                 </ATC>
               </PriceContainer>
             </ModalContent>
