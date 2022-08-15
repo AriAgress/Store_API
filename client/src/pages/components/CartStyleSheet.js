@@ -35,6 +35,9 @@ export const IMG = styled.img`
 `;
 
 export const ItemDescription = styled.div`
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+  font-size: 1rem;
   width: 100%;
   padding: 1.5rem;
   display: flex;
@@ -44,6 +47,8 @@ export const ItemDescription = styled.div`
 `;
 
 export const RemoveButton = styled.button`
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 800;
   width: 60%;
   padding: 0.5rem;
   border: none;
@@ -52,7 +57,7 @@ export const RemoveButton = styled.button`
   transition: 0.3s ease-in-out;
 
   &:hover {
-    background-color: #ffcaa6;
+    background-color: #fca311;
   }
 `;
 
@@ -77,7 +82,7 @@ export const InputButton = styled.button`
   transition: all 0.2s ease-out;
 
   &:hover {
-    background-color: #ffcaa6;
+    background-color: #fca311;
   }
 `;
 
@@ -100,7 +105,7 @@ export const Input = styled.input`
   transition: all 0.2s ease-out;
 
   &:hover {
-    background-color: #ffcaa6;
+    background-color: #fca311;
   }
 `;
 
@@ -110,6 +115,8 @@ export const ItemTotal = styled.div`
 `;
 
 export const TotalCheckout = styled.div`
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 800;
   width: 100%;
   padding: 0.8rem 0;
   display: grid;
@@ -135,15 +142,16 @@ export const ButtonContainer = styled.div`
 `;
 
 export const CheckoutButton = styled.button`
+  font-family: "Bebas Neue", cursive;
   width: 50%;
   font-weight: 800;
-  font-size: 18px;
-  padding: 1rem;
+  font-size: 2rem;
+  padding: 0.5rem;
   background-color: #f5f5f5;
   transition: 0.3s ease-in-out;
 
   &:hover {
-    background-color: #ffcaa6;
+    background-color: #fca311;
   }
 `;
 
@@ -161,7 +169,7 @@ export const HomeLink = styled.div`
   font-size: 1.5rem;
 
   &:hover {
-    color: #ffcaa6;
+    color: #fca311;
   }
 
   &:visited {

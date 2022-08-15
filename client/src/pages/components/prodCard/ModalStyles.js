@@ -22,6 +22,7 @@ export const ModalWrapper = styled.div`
   align-items: center;
   background: #f5f5f5;
   padding: 40px;
+  border-radius: 15px;
   z-index: 10;
 `;
 
@@ -40,13 +41,15 @@ export const ModalContent = styled.div`
 `;
 
 export const Title = styled.div`
+  font-family: "Playfair Display", serif;
   font-weight: 700;
   font-size: 30px;
   padding-bottom: 10px;
 `;
 
 export const Description = styled.div`
-  font-weight: 500;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
   padding: 10px 0;
   text-align: justify;
 `;
@@ -82,7 +85,7 @@ export const ATC = styled.div`
         ? "1px solid limegreen"
         : "1px solid #ffcaa6"};
     background-color: ${(props) =>
-      props.isAlertVisible === true ? "limegreen" : "#ffcaa6"};
+      props.isAlertVisible === true ? "limegreen" : "#fca311"};
   }
 `;
 
