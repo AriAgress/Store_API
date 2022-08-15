@@ -11,14 +11,10 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/api", async (req, res) => {
   try {
     const fetchItems = await axios.get(
-      "https://fakestoreapi.com/products?limit=5"
+      "https://fakestoreapi.com/products?limit=20"
     );
-
-    const data = {
-      items: fetchItems.data,
-    };
-
-    return res.json(data);
+    // console.log("retrieve items", fetchItems.data);
+    return res.json(fetchItems.data);
   } catch (error) {
     console.log(error);
   }
