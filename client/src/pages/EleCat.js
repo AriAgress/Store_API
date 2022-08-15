@@ -3,7 +3,7 @@ import ElectronicsCard from "./components/prodCard/electronicCard/ElectronicsCar
 
 import { CardWrapper } from "../pages/components/prodCard/ProductSylesheet";
 
-const EleCat = ({ eCat }) => {
+const EleCat = ({ eCat, numTag, setNumTag }) => {
   return (
     <React.Fragment>
       <CardWrapper>
@@ -15,6 +15,8 @@ const EleCat = ({ eCat }) => {
             description={p.description}
             price={p.price}
             product={p}
+            numTag={numTag}
+            setNumTag={setNumTag}
           />
         ))}
       </CardWrapper>

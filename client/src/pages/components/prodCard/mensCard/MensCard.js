@@ -27,7 +27,15 @@ import {
   CardButton,
 } from "../ProductSylesheet";
 
-const MensCard = ({ src, title, description, price, product }) => {
+const MensCard = ({
+  src,
+  title,
+  description,
+  price,
+  product,
+  numTag,
+  setNumTag,
+}) => {
   const [showModal, setShowModal] = useState(false);
   const [isAlertVisible, setIsAlertVisible] = useState(false);
 
@@ -83,6 +91,7 @@ const MensCard = ({ src, title, description, price, product }) => {
               onClick={() => {
                 addToCart(product);
                 handleButtonClick();
+                setNumTag(numTag + 1);
               }}>
               {(isAlertVisible && <AiOutlineCheck />) || <GiShoppingCart />}
             </CardButton>
@@ -103,6 +112,7 @@ const MensCard = ({ src, title, description, price, product }) => {
                   onClick={() => {
                     addToCart(product);
                     handleButtonClick();
+                    setNumTag(numTag + 1);
                   }}>
                   {(isAlertVisible && <AiOutlineCheck />) || <GiShoppingCart />}
                 </ATC>

@@ -2,6 +2,7 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import axios from "axios";
+import { cartTotalCount } from "./pages/components/crud/Crud";
 
 import Nav from "./pages/components/nav/Nav";
 import Home from "./pages/Home";
@@ -17,6 +18,7 @@ function App() {
   const [fCat, setFCat] = useState([]);
   const [jCat, setJCat] = useState([]);
   const [eCat, setECat] = useState([]);
+  const [numTag, setNumTag] = useState();
 
   const fetchData = async () => {
     const data = await axios.get("http://localhost:8000/api");
@@ -47,18 +49,44 @@ function App() {
 
   useEffect(() => {
     fetchData();
+    cartTotalCount();
+    setNumTag(cartTotalCount());
   }, []);
 
   return (
     <div className="App">
-      <Nav />
+      <Nav numTag={numTag} />
       <Routes>
-        <Route path="/" element={<Home items={items} />} />
-        <Route path="mens" element={<MensCat mCat={mCat} />} />
-        <Route path="womens" element={<WomensCat fCat={fCat} />} />
-        <Route path="jewelery" element={<JewelCat jCat={jCat} />} />
-        <Route path="electronics" element={<EleCat eCat={eCat} />} />
-        <Route path="cart" element={<Cart />} />
+        <Route
+          path="/"
+          element={<Home items={items} numTag={numTag} setNumTag={setNumTag} />}
+        />
+        <Route
+          path="mens"
+          element={
+            <MensCat mCat={mCat} numTag={numTag} setNumTag={setNumTag} />
+          }
+        />
+        <Route
+          path="womens"
+          element={
+            <WomensCat fCat={fCat} numTag={numTag} setNumTag={setNumTag} />
+          }
+        />
+        <Route
+          path="jewelery"
+          element={
+            <JewelCat jCat={jCat} numTag={numTag} setNumTag={setNumTag} />
+          }
+        />
+        <Route
+          path="electronics"
+          element={<EleCat eCat={eCat} numTag={numTag} setNumTag={setNumTag} />}
+        />
+        <Route
+          path="cart"
+          element={<Cart numTag={numTag} setNumTag={setNumTag} />}
+        />
       </Routes>
     </div>
   );

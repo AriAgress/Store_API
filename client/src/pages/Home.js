@@ -5,7 +5,7 @@ import FreeShip from "./components/freeShip/FreeShip";
 
 import { CardWrapper } from "../pages/components/prodCard/ProductSylesheet";
 
-const Home = ({ items }) => {
+const Home = ({ items, numTag, setNumTag }) => {
   const ImageData = [
     {
       id: 1,
@@ -45,6 +45,8 @@ const Home = ({ items }) => {
             description={p.description}
             price={p.price}
             product={p}
+            numTag={numTag}
+            setNumTag={setNumTag}
           />
         ))}
       </CardWrapper>

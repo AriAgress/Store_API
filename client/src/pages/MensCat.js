@@ -3,7 +3,7 @@ import MensCard from "./components/prodCard/mensCard/MensCard";
 
 import { CardWrapper } from "./components/prodCard/ProductSylesheet";
 
-const MensCat = ({ mCat }) => {
+const MensCat = ({ mCat, numTag, setNumTag }) => {
   return (
     <React.Fragment>
       <CardWrapper>
@@ -15,6 +15,8 @@ const MensCat = ({ mCat }) => {
             description={p.description}
             price={p.price}
             product={p}
+            numTag={numTag}
+            setNumTag={setNumTag}
           />
         ))}
       </CardWrapper>

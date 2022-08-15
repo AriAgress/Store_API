@@ -3,7 +3,7 @@ import WomensCard from "./components/prodCard/womensCard/WomensCard";
 
 import { CardWrapper } from "../pages/components/prodCard/ProductSylesheet";
 
-const WomensCat = ({ fCat }) => {
+const WomensCat = ({ fCat, numTag, setNumTag }) => {
   return (
     <React.Fragment>
       <CardWrapper>
@@ -15,6 +15,8 @@ const WomensCat = ({ fCat }) => {
             description={p.description}
             price={p.price}
             product={p}
+            numTag={numTag}
+            setNumTag={setNumTag}
           />
         ))}
       </CardWrapper>

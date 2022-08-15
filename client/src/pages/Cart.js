@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EmptyCart from "./components/crud/EmptyCart";
+import { cartTotalCount } from "./components/crud/Crud";
+
 import {
   getAllCart,
   removeFromCart,
@@ -30,22 +32,25 @@ import {
   CheckoutButton,
 } from "./components/CartStyleSheet";
 
-const Cart = () => {
+const Cart = ({ numTag, setNumTag }) => {
   const [cartItem, setCartItem] = useState([]);
 
   const removeItem = (p) => {
     const newCart = removeFromCart(p);
     setCartItem(newCart);
+    setNumTag(cartTotalCount());
   };
 
   const addCount = (p) => {
     const newCart = addCartCount(p);
     setCartItem(newCart);
+    setNumTag(numTag + 1);
   };
 
   const subCount = (p) => {
     const newCart = subCartCount(p);
     setCartItem(newCart);
+    setNumTag(numTag - 1);
   };
 
   const handleChange = (e, product) => {
