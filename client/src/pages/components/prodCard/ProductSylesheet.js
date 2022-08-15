@@ -47,14 +47,18 @@ export const CardInfo = styled.div`
 `;
 
 export const TextTile = styled.p`
+  font-family: "Playfair Display", serif;
   font-weight: 800;
   font-size: 1em;
   line-height: 1.5;
 `;
 
 export const TextBody = styled.p`
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
   font-size: 0.9em;
   padding-bottom: 10px;
+  color: #14213d;
 
   overflow: hidden;
   text-overflow: ellipsis;
@@ -94,6 +98,6 @@ export const CardButton = styled.div`
         ? "1px solid limegreen"
         : "1px solid #ffcaa6"};
     background-color: ${(props) =>
-      props.isAlertVisible === true ? "limegreen" : "#ffcaa6"};
+      props.isAlertVisible === true ? "limegreen" : "#fca311"};
   }
 `;

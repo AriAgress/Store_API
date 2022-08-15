@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const ShipWrapper = styled.div`
   width: 100%;
-  height: 5vh;
+  padding: 0.5rem 0;
   background-color: black;
 `;
 const ShipContainer = styled.div`
@@ -12,10 +12,11 @@ const ShipContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
-const ShipText = styled.h2`
+const ShipText = styled.div`
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
   color: white;
   font-size: 2rem;
-  font-weight: 500;
 `;
 
 const FreeShip = () => {

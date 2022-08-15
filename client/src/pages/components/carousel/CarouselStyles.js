@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const SliderWrapper = styled.div`
+  font-family: "Playfair Display", serif;
   height: 400px;
   width: 100%;
   position: relative;
-  padding-top: 50px;
 `;
 
 export const DisplayWrapper = styled.div`
