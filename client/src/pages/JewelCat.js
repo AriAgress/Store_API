@@ -3,7 +3,7 @@ import JeweleryCard from "./components/prodCard/jeweleryCard/JeweleryCard";
 
 import { CardWrapper } from "../pages/components/prodCard/ProductSylesheet";
 
-const JewelCat = ({ jCat }) => {
+const JewelCat = ({ jCat, numTag, setNumTag }) => {
   return (
     <React.Fragment>
       <CardWrapper>
@@ -15,6 +15,8 @@ const JewelCat = ({ jCat }) => {
             description={p.description}
             price={p.price}
             product={p}
+            numTag={numTag}
+            setNumTag={setNumTag}
           />
         ))}
       </CardWrapper>

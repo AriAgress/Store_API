@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { AiFillStar } from "react-icons/ai";
-import { FaStore } from "react-icons/fa";
+import { MdStore } from "react-icons/md";
 import { GiShoppingCart } from "react-icons/gi";
 
 const StoreLogoWrapper = styled.div`
@@ -64,16 +64,7 @@ const CartLogo = styled.div`
 
 const CartNum = styled.div``;
 
-const Nav = () => {
-  // const [numTag, setNumTag] = useState();
-
-  // useEffect(() => {
-  //   cartTotalCount();
-  //   setNumTag(cartTotalCount());
-  // }, []);
-
-  // console.log("yo", cartTotalCount());
-
+const Nav = ({ numTag }) => {
   return (
     <React.Fragment>
       <StoreLogoWrapper>
@@ -88,7 +79,7 @@ const Nav = () => {
       <NavBar>
         <Link to="/" style={{ textDecoration: "none" }}>
           <Logo>
-            <FaStore />
+            <MdStore />
           </Logo>
         </Link>
         <NavItems>
@@ -108,6 +99,7 @@ const Nav = () => {
             <CartLogo>
               <CartNum>
                 <GiShoppingCart />
+                {numTag}
               </CartNum>
             </CartLogo>
           </Link>
