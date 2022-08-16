@@ -54,8 +54,9 @@ const Cart = ({ numTag, setNumTag }) => {
   };
 
   const handleChange = (e, product) => {
-    const input = updateCart(product, e.target.value);
+    const input = updateCart(product, parseInt(e.target.value));
     setCartItem(input);
+    setNumTag(cartTotalCount());
   };
 
   const itemTotal = (quantity, price) => {

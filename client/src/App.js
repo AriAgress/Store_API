@@ -49,7 +49,6 @@ function App() {
 
   useEffect(() => {
     fetchData();
-    cartTotalCount();
     setNumTag(cartTotalCount());
   }, []);
 
