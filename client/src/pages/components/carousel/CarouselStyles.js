@@ -38,3 +38,20 @@ export const Intro = styled.h1`
 `;
 
 export const Description = styled.div``;
+
+export const SliderController = styled.div`
+  list-style: none;
+  position: relative;
+  top: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const SliderButton = styled.li`
+  font-size: 1.5rem;
+
+  &:hover {
+    cursor: pointer;
+    color: #fca311;
+  }
+`;

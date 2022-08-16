@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import {
+  BsFillArrowLeftSquareFill,
+  BsFillArrowRightSquareFill,
+} from "react-icons/bs";
 
 import {
   SliderWrapper,
@@ -7,12 +11,22 @@ import {
   DisplayBody,
   InfoBox,
   Intro,
+  SliderController,
+  SliderButton,
 } from "./CarouselStyles.js";
 
 const Carousel = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
   const length = slides.length;
+
+  const nextSlide = () => {
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+
+  const lastSlide = () => {
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
 
   const updateIndex = (newIndex) => {
     if (newIndex < 0) {
@@ -56,6 +70,14 @@ const Carousel = ({ slides }) => {
           </DisplayWrapper>
         );
       })}
+      <SliderController>
+        <SliderButton style={{ paddingRight: "1rem" }} onClick={lastSlide}>
+          <BsFillArrowLeftSquareFill />
+        </SliderButton>
+        <SliderButton style={{ paddingLeft: "1rem" }} onClick={nextSlide}>
+          <BsFillArrowRightSquareFill />
+        </SliderButton>
+      </SliderController>
     </SliderWrapper>
   );
 };
